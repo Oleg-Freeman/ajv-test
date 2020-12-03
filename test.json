@@ -1,0 +1,42 @@
+{
+    "title": "Перевірка відповідності КСЗІ ",
+    "type": "object",
+    "sign1Required": true,
+    "isP7sSign": false,
+    "forceRedirect": true,
+    "pdfRequired": true,
+    "fileName": "Звіт про перевірку відповідності КСЗІ",
+    "finalScreen": {
+        "title": "Заяву надіслано",
+        "subtitle": "Очікуйте на інформацію про стан розгляду"
+    },
+    "stepOrders": "(allStepsData) => ['genInfo']",
+    "calcTriggers": [],
+    "properties": {
+        "genInfo": {
+            "type": "object",
+            "description": "Загальні відомості",
+            "properties": {
+                "isKszi": {
+                    "type": "boolean",
+                    "control": "toggle",
+                    "offText": "Ні",
+                    "onText": "Так",
+                    "checkRequired": "() => true",
+                    "description": "Наявність КСЗІ в системі учасника ЄІС МВС (постачальника)",
+                    "defaultValue": true
+                },
+                "ksziCompatible": {
+                    "type": "boolean",
+                    "control": "toggle",
+                    "offText": "Ні",
+                    "onText": "Так",
+                    "checkRequired": "() => true",
+                    "description": "Сумісність КСЗІ системи учасника ЄІС МВС (постачальника)",
+                    "defaultValue": true
+                }
+            },
+            "required": []
+        }
+    }
+}
